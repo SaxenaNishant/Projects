@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax Github Users</title>
+  </head>
+  <style>
+    .user {
+      display: flex;
+      background: lightgrey;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .user ul {
+      list-style: none;
+    }
+  </style>
+  <body>
+    <input type="button" value="Load github users" id="btn" />
+    <br />
+    <br />
+    <h1>Github users</h1>
+    <div id="user"></div>
+    <script>
+      document.getElementById("btn").addEventListener("click", loadUsers);
+      function loadUsers() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.github.com/users", true);
+        xhr.onload = function () {
+          if (this.status === 200) {
+            const users = JSON.parse(this.responseText);
+            console.log(users);
+            let output = "";
+            for (let i in users) {
+              output += `
+                <div class="user">
+                <img src=${users[i].avatar_url} width="70" height="70">
+                    <ul>
+                      <li>
+                        ID: ${users[i].id}   
+                      </li>  
+                      <li>
+                        Login: ${users[i].login}   
+                      </li> 
+                    </ul>
+                </div>
+                `;
+            }
+            document.getElementById("user").innerHTML = output;
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

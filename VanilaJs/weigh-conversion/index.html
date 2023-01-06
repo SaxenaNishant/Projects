@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weight Convertor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="method.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p id="heading">Weight Convertor</p>
+      <input
+        type="number"
+        id="poundValue"
+        class="input__field"
+        placeholder="Enter pounds"
+        oninput="getValue()"
+      />
+      <div class="output-div" id="output">
+        <div class="box bg-blue">
+          <h4 id="gm-label">Grams:</h4>
+          <p id="gm-value"></p>
+        </div>
+        <div class="box bg-green">
+          <h4>KiloGrams:</h4>
+          <p id="kg-value"></p>
+        </div>
+        <div class="box bg-red">
+          <h4>Ounces:</h4>
+          <p id="ounces-value"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

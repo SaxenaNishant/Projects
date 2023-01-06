@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filterable List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center-align">My Contacts</h1>
+      <input type="text" id="filter" placeholder="Search for names" />
+
+      <ul id="names" class="collection with-header">
+        <li class="collection-header">
+          <h5>A</h5>
+        </li>
+        <li class="collection-item">
+          <a href="#">Abe</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Acm</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Aqw</a>
+        </li>
+
+        <li class="collection-header">
+          <h5>B</h5>
+        </li>
+        <li class="collection-item">
+          <a href="#">Bve</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Bcm</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Bqw</a>
+        </li>
+
+        <li class="collection-header">
+          <h5>C</h5>
+        </li>
+        <li class="collection-item">
+          <a href="#">Cbe</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Cem</a>
+        </li>
+        <li class="collection-item">
+          <a href="#">Csw</a>
+        </li>
+      </ul>
+    </div>
+    <script>
+      const filterEle = document.getElementById("filter");
+
+      filterEle.addEventListener("keyup", filterNames);
+
+      function filterNames() {
+        const filterValue = document
+          .getElementById("filter")
+          .value.toUpperCase();
+
+        const ul = document.getElementById("names");
+        const li = ul.querySelectorAll("li.collection-item");
+        for (let i = 0; i < li.length; i++) {
+          let a = li[i].getElementsByTagName("a")[0];
+          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
