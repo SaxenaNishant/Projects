@@ -1,6 +1,6 @@
 # Projects
 
-This repo is basicall related to the following items :-
+This repo is basically related to the following items :-
 ## Vanila JS :-
  List of vanila js projects combining them together into a single projects also contain AJAX api call methods
  ## React JS :- 
