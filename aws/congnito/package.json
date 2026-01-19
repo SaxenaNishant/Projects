@@ -1,0 +1,18 @@
+{
+  "name": "congnito",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "openid-client": "^6.8.1"
+  }
+}
