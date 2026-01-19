@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 10px;
+        }
+        button{
+            padding: 5px 10px;
+            border: 1px solid gray;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Serverless form</h1>
+        <form id="form">
+            <div>
+                <label for="fname">First name</label>
+                <input type="text" name="fname" id="fname">
+            </div>
+            <div>
+                <label for="lname">Last name</label>
+                <input type="text" name="lname" id="lname">
+            </div>
+            <div>
+               <label for="email">Email</label>
+                <input type="text" name="email" id="email">   
+            </div>
+             <div>
+                <h3>Gender</h3>
+                <input type="radio" id="male" value="male" name="gender">
+                <label for="male">Male
+                    
+                </label>
+                <input type="radio" id="female" value="female" name="gender">
+                <label for="female">Female
+                    
+                </label>
+                <input type="radio" id="others" value="others" name="gender">
+                <label for="others">Others
+                    
+                </label>
+            </div>
+             <div>
+                <label>Age</label>
+                <input type="number" name="age" id="age">
+            </div>
+             <div>
+                <button type="submit">Sumbit</button>
+            </div>  
+           
+        </form>
+         <div>
+            <input type="file" name="doc" id="doc">
+            <button id="upload">Upload File</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+</html>
